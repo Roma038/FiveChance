@@ -1,0 +1,15 @@
+﻿<Window x:Class="TwoLayerApp.OptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwoLayerApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="FIVE CHANCE - difficulty mode" Height="610" Width="600" Margin="5" FontStyle="Normal" FontSize="20">
+    <Grid x:Name="OptionGrid" Background="Indigo">
+        <Button x:Name="easy" Content="Easy" Width="120" Height="30" FontSize="15" HorizontalAlignment="Left" Margin="20" Click="option_Click"></Button>
+        <Button x:Name="normal" Content="Normal" Width="120" Height="30" FontSize="15" HorizontalAlignment="Center" Margin="20" Click="option_Click"></Button>
+        <Button x:Name="hard" Content="Hard" Width="120" Height="30" FontSize="15" HorizontalAlignment="Right" Margin="20" Click="option_Click"></Button>
+    </Grid>
+</Window>

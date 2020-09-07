@@ -1,0 +1,14 @@
+﻿<Window x:Class="TwoLayerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwoLayerApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="FIVE CHANCE" Height="610" Width="600" Margin="1" FontStyle="Normal" FontSize="20">
+    <Grid x:Name="MainGrid" Background="Indigo">
+        <Button x:Name="START" Width="120" Content="Start" FontSize="15" Click="Click_Button" Margin="237,270,236.6,275"/>
+        <Button x:Name="options" Content="Options" FontSize="15" Click="Click_Button" RenderTransformOrigin="1.009,0.79" Margin="237,336,236.6,209"/>
+    </Grid>
+</Window>
