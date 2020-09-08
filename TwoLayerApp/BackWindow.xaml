@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Background="LightGray"
         WindowStartupLocation="CenterScreen"
-        Title="Sample" Height="610" Width="600" Margin="1" FontStyle="Normal" FontSize="20">
+        x:Name="backWindow"
+        Title="FIVE CHANCE" Height="610" Width="600" Margin="1" FontStyle="Normal" FontSize="20">
     <Grid x:Name="Grid" Margin="1" Background="LightGray">
 
         <Grid.ColumnDefinitions>

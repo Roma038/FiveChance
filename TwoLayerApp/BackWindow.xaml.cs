@@ -16,13 +16,17 @@ namespace TwoLayerApp
 {
     /// <summary>
     /// Interaction logic for BackWindow.xaml
+    /// Gameplay logic of the game be in this file
     /// </summary>
     public partial class BackWindow : Window
     {
         private Button button;
         private TextBlock tblock;
+        private TextBlock tblockgreen;
         private int click_amount = 0;
         public int Click_amount { get { return click_amount; } }
+        private int green_click_amount = 0;
+        public int Green_click_amount { get { return green_click_amount; } }
         private int x;
         private bool isClicked = false;
         private static int y;
@@ -37,12 +41,24 @@ namespace TwoLayerApp
                     FontWeight = FontWeights.Bold,
                     FontStyle = FontStyles.Normal,
                     Foreground = Brushes.Black,
-                    Background = Brushes.LightGray
+                    Background = Brushes.DarkRed
                 };
                 Grid.SetRow(tblock, 12);
                 Grid.SetColumn(tblock, 0);
-                Grid.SetColumnSpan(tblock, 12);
+                Grid.SetColumnSpan(tblock, 6);
                 Grid.Children.Add(tblock);
+
+                tblockgreen = new TextBlock()
+                {
+                    FontWeight = FontWeights.Bold,
+                    FontStyle = FontStyles.Normal,
+                    Foreground = Brushes.Black,
+                    Background = Brushes.DarkGreen
+                };
+                Grid.SetRow(tblockgreen, 12);
+                Grid.SetColumn(tblockgreen, 6);
+                Grid.SetColumnSpan(tblockgreen, 6);
+                Grid.Children.Add(tblockgreen);
 
                 for (int i = 0; i < 11; i++)
                 {
@@ -114,13 +130,43 @@ namespace TwoLayerApp
                     click_amount = 1 + Convert.ToInt32(tblock.Text);
                     tblock.Text = click_amount.ToString();
                 }
-                if (click_amount >= 5)
+                if (click_amount >= 6)
                 {
+                    LosingWin losingWin = new LosingWin();
+                    Image image = new Image();
+                    MediaElement mediaElement = new MediaElement();
+                    image.Stretch = Stretch.Fill;
+                    image.BeginInit();
+                    image.Source = new BitmapImage(new Uri(@"C:\Users\rgurbanov\Pictures\neon.jpg"));
+                    image.EndInit();
+                    losingWin.Content = image;
+                    losingWin.Show();
                     Close(); 
 
                 }
 
 
+            }
+            if (button.Background == Brushes.DarkGreen)
+            {
+                tblockgreen.Text = Green_click_amount.ToString();
+                if (tblockgreen.Text != null)
+                {
+                    green_click_amount = 1 + Convert.ToInt32(tblockgreen.Text);
+                    tblockgreen.Text = green_click_amount.ToString();
+                }
+                if (25 < green_click_amount)
+                {
+                    WinWindow win = new WinWindow();
+                    Image image = new Image();
+                    image.Stretch = Stretch.Fill;
+                    image.BeginInit();
+                    image.Source = new BitmapImage(new Uri(@"C:\Users\rgurbanov\Pictures\win_image_png.png"));
+                    image.EndInit();
+                    win.Content = image;
+                    win.Show();
+                    backWindow.Close();
+                }
             }
             //If button clicked once, IsEnabled set false
             if (isClicked == true)

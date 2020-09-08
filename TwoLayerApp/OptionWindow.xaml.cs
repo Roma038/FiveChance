@@ -16,6 +16,7 @@ namespace TwoLayerApp
 {
     /// <summary>
     /// Interaction logic for OptionWindow.xaml
+    /// Logic of the difficulty mode locate in this file
     /// </summary>
     public partial class OptionWindow : Window
     {
